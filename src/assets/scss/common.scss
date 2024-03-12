@@ -1,0 +1,157 @@
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Font style css
+.font-Syne {
+    font-family: 'Syne', sans-serif;
+    /* Use the Google Font 'Syne' */
+}
+
+.font-Montserrat {
+    font-family: 'Montserrat', sans-serif;
+    /* Use the Google Font 'Montserrat' */
+}
+
+.font-Cairo {
+    font-family: 'Cairo', sans-serif;
+    /* Use the Google Font 'Cairo' */
+}
+
+.ls-none {
+    list-style: none;
+}
+
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-40 {
+    font-size: 40px;
+}
+
+
+.td-none {
+    text-decoration: none;
+}
+
+.ls-none {
+    list-style: none;
+}
+
+// Elements style css
+.br-10 {
+    border-radius: 10px;
+}
+
+.br-24 {
+    border-radius: 24px;
+}
+
+// display style css
+.d-hide {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-block {
+    display: block;
+}
+
+// Position style css
+.p-0 {
+    padding: 0px;
+}
+
+.m-0 {
+    margin: 0px;
+}
+
+.form-message {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('https://i.imgur.com/ilgqWuX.png');
+}
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image: url('https://i.imgur.com/Q9BGTuy.png');
+}
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('https://i.imgur.com/Z8q7ww7.png');
+}
+.error{
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('https://i.imgur.com/GnyDvKN.png');
+}
+
+// Button custom style css
+.btn-info {
+    color: #fff;
+    background-color: #28a745;
+    border: solid 1px #28a745;
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    border: solid 1px #f8f9fa;
+}

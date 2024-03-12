@@ -1,0 +1,47 @@
+<div class='auth-form'>
+  <form class='submit-form' onSubmit={handleSubmit}>
+    <div class="form-header">
+      <h1 class="form-title m-0 font-Syne fw-600">{{title}}</h1>
+      <p class="form-subtitle m-0 font-Montserrat fw-500">{{subtitle}}</p>
+    </div>
+    <div class='form-body'>
+      <div class='form-group'>
+        <div class='warning form-message d-hide font-Syne' ref={warningRef}>Please enter your email and password
+          correctly.</div>
+      </div>
+      <div class='form-group'>
+        <div class='icon-input d-flex br-10'>
+          <div class='icon'><img [src]="mail" alt='emailicon' /></div>
+          <input type='email' name='email' placeholder='Email' required onChange={handleEmailChange} />
+        </div>
+      </div>
+      <div class='form-group'>
+        <div class='icon-input d-flex br-10'>
+          <div class='icon'><img [src]="lock" alt='lockicon' /></div>
+          <input type='password' name='password' placeholder='Password' required onChange={handlePasswordChange} />
+        </div>
+      </div>
+      <div class='form-group'>
+        <button class="site-button btn-submit btn-gradient font-Syne fw-700 br-10 br-10 td-none">Log In</button>
+      </div>
+      <div class='form-group'>
+        <button class="site-button btn-submit btn-greygradient font-Syne fw-700 br-10 br-10 td-none">I forgot my
+          password</button>
+      </div>
+    </div>
+  </form>
+  <div class='form-icons d-flex'>
+    <a href="/#" class="link-icon icon-google">
+      <img [src]="google" alt="link-icon" />
+    </a>
+    <a href="/#" class="link-icon icon-metamask">
+      <img [src]="metamask" alt="link-icon" />
+    </a>
+    <a href="/#" class="link-icon icon-instagram d-hide">
+      <img [src]="instagram" alt="link-icon" />
+    </a>
+    <a href="/#" class="link-icon icon-twitter">
+      <img [src]="twitter" alt="link-icon" />
+    </a>
+  </div>
+</div>
