@@ -3,9 +3,18 @@ $formW: 376px;
 $formbg: #F9F8F4;
 $titlecolor: #372A2A;
 $subtitlecolor: #654657;
-$bgimage: url('../../../../assets/images/mobile-bg.png');
+$bgimage: url('../../../../../assets/images/mobile-bg.png');
 
 // Custom style css
+subcont-root {
+    display: block;
+    width: 47%;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
 .auth-form {
     width: 53%;
     background: $formbg;

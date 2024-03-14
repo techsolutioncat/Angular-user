@@ -1,0 +1,31 @@
+<header class='header-main__wrapper' id="headerMainWrapper">
+  <div class='header-main__container d-flex'>
+    <div class='site-logo'>
+      <a href="/" class='logo'>
+        <img [src]="logo" alt='logo' />
+      </a>
+      <a href="/" class='mobile-logo d-hide'>
+        <img [src]="MobileLogo" alt='logo' />
+      </a>
+    </div>
+    <div class='site-navigation'>
+      <a href="#" class="nav-link site-button link-login btn-transparent font-Syne fw-500 br-10 br-10 td-none">Log
+        in</a>
+      <a href="#" class="nav-link site-button link-signup btn-gradient font-Syne fw-700 br-10 br-10 td-none">Sign Up</a>
+
+      <div class='mobile-menu d-hide'>
+        <fa-icon [icon]="faXmark" id="closemenu" class='close-menu d-hide' (click)="toggleMobileMenu()"></fa-icon>
+        <fa-icon [icon]="faNavicon" id="openmenu" class='open-menu' (click)="toggleMobileMenu()"></fa-icon>
+        <ul id="MbileMenuList" class="menu-list ls-none p-0 br-10 d-hide">
+          <li>
+            <a href="#" class='mo-nav-link font-Syne td-none'>Log in</a>
+          </li>
+          <li>
+            <a href="#" class='mo-nav-link font-Syne td-none'>Sign Up</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</header>

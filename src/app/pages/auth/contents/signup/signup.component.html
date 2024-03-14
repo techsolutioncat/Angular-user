@@ -1,9 +1,10 @@
 <div class="page-wrap">
-  <header-root></header-root>
-
   <div class="main-content d-flex">
-    <subcont-root></subcont-root>
-
+    <div class='sub-cont'>
+      <div class='main-image'>
+        <img [src]="image" alt='main img' />
+      </div>
+    </div>
     <div class='auth-form'>
       <form class='submit-form' onSubmit={handleSubmit}>
         <div class="form-header">
@@ -52,5 +53,4 @@
       </div>
     </div>
   </div>
-  
 </div>
