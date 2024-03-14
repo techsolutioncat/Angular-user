@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { SubcontComponent } from '../layout/subcont/subcont.component';
 import { HeaderComponent } from '../layout/header/header.component';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'login-root',
