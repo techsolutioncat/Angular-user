@@ -1,0 +1,59 @@
+<div class='page-width'>
+  <h1 class='page-title font-Syne fw-600 fs-32'>Your Focus</h1>
+  <div class='portlate br-24'>
+    <div class='tab-header'>
+      <ul class='d-flex'>
+        <li class='active'>
+          <a class='font-Cairo fw-700 fs-16 td-none'>In progress</a>
+        </li>
+        <li>
+          <a class='font-Cairo fw-700 fs-16 td-none'>Completed</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class='tab-content'>
+      <div class='action-group d-flex'>
+        <div class='information'>
+          <p class='font-Cairo fw-600 fs-16 td-none m-0'>Focus Points</p>
+          <div class='focus-count d-flex'>
+            <p class='font-Cairo fw-700 fs-40 td-none m-0'>12,254</p>
+            <p class='focus-points font-Cairo fw-700 fs-20 td-none m-0'>points</p>
+          </div>
+        </div>
+        <div class='button'>
+          <a class='add-new font-Syne fw-700 fs-18 td-none'><img [src]="plus" />Add new
+            focus point</a>
+        </div>
+      </div>
+      <div class='card-list'>
+        <div class='card' key={row.id}>
+          <div class='card-title'>
+            <p class='m-0 font-Syne fw-700 fs-16'>Voluptatem soluta omnis doloremque iusto odit ab architecto voluptas.
+            </p>
+            <img [src]="help" />
+          </div>
+          <div class='card-icons'>
+            <div class='icons'>
+              <img [src]="users" />
+              <img [src]="fizz" />
+            </div>
+            <a class='btn-edit'>
+              <fa-icon [icon]="faEdit" class='fa-edit'></fa-icon>
+            </a>
+          </div>
+          <div class='card-text'>
+            <p class='font-Cairo fw-500 fs-14'>Voluptatem soluta omnis doloremque iusto odit ab architecto voluptas.</p>
+            <a class='btn-remove'>
+              <fa-icon [icon]="faRemove" class='fa-remove'></fa-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class='load-more'>
+        <a class='btn-load-more font-Syne fw-500 fs-16 td-none br-10'>Load More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer-root></footer-root>
