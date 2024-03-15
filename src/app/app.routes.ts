@@ -1,11 +1,21 @@
 // app.routes.ts
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/auth/contents/login/login.component';
 import { SignupComponent } from './pages/auth/contents/signup/signup.component';
+import { CreatePasswordComponent } from './pages/auth/contents/createpassword/signup.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'createpassword', component: CreatePasswordComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   // Add more routes as needed
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule { }

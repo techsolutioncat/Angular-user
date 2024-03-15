@@ -9,19 +9,19 @@
       </a>
     </div>
     <div class='site-navigation'>
-      <a routerLink="/login" class="nav-link site-button link-login btn-transparent font-Syne fw-500 br-10 br-10 td-none">Log
+      <a (click)="navigateToComponent('/login')" class="nav-link site-button link-login btn-transparent font-Syne fw-500 br-10 br-10 td-none">Log
         in</a>
-      <a routerLink="/signup" class="nav-link site-button link-signup btn-gradient font-Syne fw-700 br-10 br-10 td-none">Sign Up</a>
+      <a (click)="navigateToComponent('/signup')" class="nav-link site-button link-signup btn-gradient font-Syne fw-700 br-10 br-10 td-none">Sign Up</a>
 
       <div class='mobile-menu d-hide'>
         <fa-icon [icon]="faXmark" id="closemenu" class='close-menu d-hide' (click)="toggleMobileMenu()"></fa-icon>
         <fa-icon [icon]="faNavicon" id="openmenu" class='open-menu' (click)="toggleMobileMenu()"></fa-icon>
         <ul id="MbileMenuList" class="menu-list ls-none p-0 br-10 d-hide">
           <li>
-            <a routerLink="/login" class='mo-nav-link font-Syne td-none'>Log in</a>
+            <a (click)="navigateToComponent('/login')" class='mo-nav-link font-Syne td-none'>Log in</a>
           </li>
           <li>
-            <a routerLink="/signup" class='mo-nav-link font-Syne td-none'>Sign Up</a>
+            <a (click)="navigateToComponent('/signup')" class='mo-nav-link font-Syne td-none'>Sign Up</a>
           </li>
         </ul>
       </div>

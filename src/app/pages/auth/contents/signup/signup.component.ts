@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { SubcontComponent } from '../layout/subcont/subcont.component';
 import { HeaderComponent } from '../layout/header/header.component';
@@ -25,4 +26,9 @@ export class SignupComponent {
   
   title = 'Create Account';
   subtitle = 'Provide necessary information to proceed with registration or sign up with social media';
+
+  constructor(private router: Router) { }
+  navigateToComponent(page: string) {
+    this.router.navigate([page]); // Navigate to signup
+  }
 }

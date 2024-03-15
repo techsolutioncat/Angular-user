@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Renderer2, HostListener } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faNavicon, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -19,7 +20,7 @@ export class HeaderComponent {
   faNavicon = faNavicon;
   faXmark = faXmark;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private router: Router, private renderer: Renderer2) { }
   showMobileMenu: boolean = false;
   toggleMobileMenu() {
     this.showMobileMenu = !this.showMobileMenu;
@@ -49,5 +50,9 @@ export class HeaderComponent {
       this.renderer.setStyle(headerMainWrapper, 'background-color', 'transparent');
       this.renderer.setStyle(headerMainWrapper, 'boxShadow', 'unset');
     }
+  }
+  
+  navigateToComponent(page: string) {
+    this.router.navigate([page]); // Navigate to signup
   }
 }
