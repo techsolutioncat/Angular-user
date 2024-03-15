@@ -26,7 +26,7 @@ export class HeaderComponent {
     const closemenu = document.getElementById('closemenu');
     const openmenu = document.getElementById('openmenu');
     const MbileMenuList = document.getElementById('MbileMenuList');
-    
+
     if (this.showMobileMenu) {
       this.renderer.setStyle(closemenu, 'display', 'block');
       this.renderer.setStyle(openmenu, 'display', 'none');
