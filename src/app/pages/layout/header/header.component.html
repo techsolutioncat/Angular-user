@@ -1,5 +1,37 @@
-<div class='sub-cont'>
-  <div class='main-image'>
-      <img [src]="image" alt='main img' />
-  </div>
+<div class="page-width">
+  <header class='page-header header-main__wrapper' id="headerMainWrapper">
+    <div class='header-main__container d-flex'>
+      <div class='site-logo'>
+        <a class='logo'>
+          <img [src]="logo" alt='logo' />
+        </a>
+        <a class='mobile-logo d-hide'>
+          <img [src]="MobileLogo" alt='logo' />
+        </a>
+      </div>
+      <div class='site-navigation'>
+        <ul class='nav-link-list p-0 m-0 d-flex ls-none'>
+          <li class={{item.liClass}} *ngFor="let item of items">
+            <img class='nav-icon' src={{item.svg}} alt='nav-logo' />
+            <a class='nav-link btn-transparent font-Syne fs-14 fw-600 td-none'>{{item.name}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class='logout'>
+        <a class='nav-link btn-transparent font-Syne fs-16 fw-600 td-none d-flex'>
+          <img class='nav-icon' [src]="logout" alt='nav-logo' />
+          <span>Log out</span>
+        </a>
+      </div>
+      <div class='mobile-menu d-hide'>
+        <fa-icon [icon]="faXmark" id="closemenu" class='close-menu d-hide' (click)="toggleMobileMenu()"></fa-icon>
+        <a class='open-menu' id="openmenu"><img [src]="megamenu" (click)="toggleMobileMenu()" /></a>
+        <ul id="MbileMenuList" class='nav-link-list p-0 m-0 d-hide ls-none br-10'>
+          <li class={{item.liClass}} *ngFor="let item of items">
+            <a class='nav-link btn-transparent font-Syne fs-14 fw-600 td-none'>{{item.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
 </div>
