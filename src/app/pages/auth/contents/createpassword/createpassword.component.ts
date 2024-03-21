@@ -8,7 +8,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   selector: 'login-root',
   standalone: true,
   templateUrl: './createpassword.component.html',
-  imports: [HeaderComponent, SubcontComponent, HttpClientModule],
+  imports: [HttpClientModule, HeaderComponent, SubcontComponent],
   styleUrls: ['../scss/auth.component.scss', '../scss/input.component.scss', '../scss/button.component.scss'],
 })
 
@@ -48,6 +48,7 @@ export class CreatePasswordComponent implements OnInit {
   @ViewChild('myElement') myElement!: ElementRef;
   @ViewChild('inputPassword') inputPassword!: ElementRef;
   @ViewChild('inputRePassword') inputRePassword!: ElementRef;
+
   onSubmit(event: Event, password: string, repassword: string) {
     event.preventDefault(); // Prevent the default form submission behavior
     this.isval = true;
@@ -76,11 +77,16 @@ export class CreatePasswordComponent implements OnInit {
       this.myElement.nativeElement.style.display = 'block';
     } else {
       this.formData.password = password.trim();
-      console.log(this.formData);
-      this.http.post('http://localhost:3000/api/formdata', this.formData).subscribe(response => {
-        console.log('Form data added successfully:', response);
-        // this.navigateToComponent('/login');
-      });
+      this.http.post<any>('http://localhost:3000/users', this.formData)
+        .subscribe(response => {
+          console.log('User data sent successfully:', response);
+          // Handle success or show a success message
+
+          this.navigateToComponent('/login')
+        }, error => {
+          console.error('Error sending user data:', error);
+          // Handle error or show an error message
+        });
     }
   }
 }
