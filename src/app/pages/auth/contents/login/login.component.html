@@ -12,23 +12,24 @@
         </div>
         <div class='form-body'>
           <div class='form-group'>
-            <div class='warning form-message d-hide font-Syne'>Please enter your email and password
+            <div class='warning form-message d-hide font-Syne' #msgElement>Please enter your email and password
               correctly.</div>
           </div>
           <div class='form-group'>
             <div class='icon-input d-flex br-10'>
               <div class='icon'><img [src]="mail" alt='emailicon' /></div>
-              <input type='email' name='email' placeholder='Email' required />
+              <input type='email' name='email' placeholder='Email' #inputEmail required />
             </div>
           </div>
           <div class='form-group'>
             <div class='icon-input d-flex br-10'>
               <div class='icon'><img [src]="lock" alt='lockicon' /></div>
-              <input type='password' name='password' placeholder='Password' required />
+              <input type='password' name='password' placeholder='Password' #inputPassword required />
             </div>
           </div>
           <div class='form-group'>
-            <button class="site-button btn-submit btn-gradient font-Syne fw-700 br-10 br-10 td-none">Log In</button>
+            <button (click)="onSubmit($event, inputEmail.value, inputPassword.value)"
+              class="site-button btn-submit btn-gradient font-Syne fw-700 br-10 br-10 td-none">Log In</button>
           </div>
           <div class='form-group'>
             <button class="site-button btn-submit btn-greygradient font-Syne fw-700 br-10 br-10 td-none">I forgot my
@@ -52,5 +53,5 @@
       </div>
     </div>
   </div>
-  
+
 </div>
