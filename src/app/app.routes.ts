@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/auth/contents/login/login.component';
 import { SignupComponent } from './pages/auth/contents/signup/signup.component';
-import { CreatePasswordComponent } from './pages/auth/contents/createpassword/signup.component';
+import { CreatePasswordComponent } from './pages/auth/contents/createpassword/createpassword.component';
 import { FocusComponent } from './pages/focus/focus.component';
 
 export const routes: Routes = [

@@ -12,33 +12,33 @@
                 </div>
                 <div class='form-body'>
                     <div class='form-group'>
-                        <div class='warning form-message d-hide font-Syne'>Please enter your email and
-                            password correctly.</div>
+                        <div class='info form-message d-hide font-Syne'>You are already registered.</div>
                     </div>
                     <div class='form-group'>
                         <div class='icon-input d-flex br-10'>
                             <div class='icon'><img [src]="user" alt='usericon' /></div>
-                            <input type='email' name='username' placeholder='Username' required />
+                            <input type='text' name='username' placeholder='Username' #inputUsername required />
                         </div>
                     </div>
                     <div class='form-group'>
                         <div class='icon-input d-flex br-10'>
                             <div class='icon'><img [src]="mail" alt='emailicon' /></div>
-                            <input type='email' name='email' placeholder='Email' required />
+                            <input type='email' name='email' placeholder='Email' #inputEmail required />
                         </div>
                     </div>
                     <div class='form-group'>
                         <div class='icon-input d-flex br-10'>
                             <div class='icon'><img [src]="phone" alt='emailicon' /></div>
-                            <input type='tel' name='phonenumber' placeholder='Phone Number' required />
+                            <input type='tel' name='phonenumber' placeholder='Phone Number' #inputPhone required />
                         </div>
                     </div>
                     <div class='form-group'>
-                        <button (click)="navigateToComponent('/createpassword')"
+                        <button
+                            (click)="navigateToComponent('/createpassword', inputUsername.value, inputEmail.value, inputPhone.value )"
                             class="site-button btn-submit btn-gradient font-Syne fw-700 br-10 br-10 td-none">Proceed</button>
                     </div>
                     <div class='form-group'>
-                        <button (click)="navigateToComponent('/login')"
+                        <button (click)="navigateToComponent('/login', '', '', '')"
                             class="site-button btn-submit btn-greygradient font-Syne fw-700 br-10 br-10 td-none">I
                             already have an account</button>
                     </div>

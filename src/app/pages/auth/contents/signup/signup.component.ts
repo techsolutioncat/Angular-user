@@ -28,7 +28,9 @@ export class SignupComponent {
   subtitle = 'Provide necessary information to proceed with registration or sign up with social media';
 
   constructor(private router: Router) { }
-  navigateToComponent(page: string) {
-    this.router.navigate([page]); // Navigate to signup
+  navigateToComponent(page: string, username: string, email: string, phone: string ) {
+    if( username.trim() && email.trim() && phone.trim()) {
+      this.router.navigate([page, { username: username, email:email, phone:phone }]); // Navigate to signup
+    }
   }
 }
