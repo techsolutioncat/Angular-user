@@ -12,7 +12,7 @@
                 </div>
                 <div class='form-body'>
                     <div class='form-group'>
-                        <div class='info form-message d-hide font-Syne'>You are already registered.</div>
+                        <div class='info form-message d-hide font-Syne' #msgElement>You are already registered.</div>
                     </div>
                     <div class='form-group'>
                         <div class='icon-input d-flex br-10'>
@@ -34,11 +34,11 @@
                     </div>
                     <div class='form-group'>
                         <button
-                            (click)="navigateToComponent('/createpassword', inputUsername.value, inputEmail.value, inputPhone.value )"
+                            (click)="navigateToCreatePassword('/createpassword', $event, inputUsername.value, inputEmail.value, inputPhone.value )"
                             class="site-button btn-submit btn-gradient font-Syne fw-700 br-10 br-10 td-none">Proceed</button>
                     </div>
                     <div class='form-group'>
-                        <button (click)="navigateToComponent('/login', '', '', '')"
+                        <button (click)="navigateToLogin('/login')"
                             class="site-button btn-submit btn-greygradient font-Syne fw-700 br-10 br-10 td-none">I
                             already have an account</button>
                     </div>
