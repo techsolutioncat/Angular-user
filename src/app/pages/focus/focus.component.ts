@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -8,6 +8,7 @@ import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 import { ModalComponent } from './modal/modal.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { access } from 'fs';
 
 @Component({
   selector: 'focus-root',
@@ -31,6 +32,7 @@ export class FocusComponent {
   limit: any = 1;
   items: any = [];
 
+  @ViewChild('inputLimit') inputLimit!: ElementRef;
   constructor(public dialog: MatDialog, private http: HttpClient) {
     this.onGetAll(this.limit);
   }
@@ -66,5 +68,11 @@ export class FocusComponent {
         console.log("User cancelled.");
       }
     });
+  }
+
+  loadMore(): void {
+    this.limit = this.limit + 1;
+    this.inputLimit.nativeElement.value = this.limit;
+    this.onGetAll(this.limit);
   }
 }

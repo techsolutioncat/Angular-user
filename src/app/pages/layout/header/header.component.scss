@@ -52,6 +52,7 @@ $activeTabBorderColor: linear-gradient(90deg, #845DEA 0%, #EB5DB9 99.7%);
 
         .logout {
             .nav-link {
+                cursor: pointer;
                 gap: 19px;
                 color: #DAB397;
             }

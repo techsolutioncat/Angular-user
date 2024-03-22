@@ -14,6 +14,7 @@
     </div>
 
     <div class='tab-content'>
+      <input type="hidden" #inputLimit>
       <div class='action-group d-flex'>
         <div class='information'>
           <p class='font-Cairo fw-600 fs-16 td-none m-0'>Focus Points</p>
@@ -53,7 +54,7 @@
         </div>
       </div>
       <div class='load-more'>
-        <a class='btn-load-more font-Syne fw-500 fs-16 td-none br-10'>Load More</a>
+        <a class='btn-load-more font-Syne fw-500 fs-16 td-none br-10' (click)="loadMore()">Load More</a>
       </div>
     </div>
   </div>

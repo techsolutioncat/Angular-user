@@ -60,6 +60,10 @@ export class HeaderComponent {
     }
   };
 
+  signout(): void {
+    this.router.navigate(['/login']); // Navigate to createpassword
+  }
+
   loopOperation(): void {
     console.log('item');
 
