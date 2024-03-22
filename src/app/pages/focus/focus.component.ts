@@ -6,6 +6,7 @@ import { HeaderComponent } from '../layout/header/header.component';
 import { FooterComponent } from '../layout/footer/footer.component';
 import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 import { ModalComponent } from './modal/modal.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -49,6 +50,20 @@ export class FocusComponent {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('User input:', result);
+      }
+    });
+  }
+
+  openConfirmationDialog(id: any): void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, { data: { id: id }});
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // User confirmed, proceed with action
+        console.log("User confirmed.");
+      } else {
+        // User cancelled
+        console.log("User cancelled.");
       }
     });
   }

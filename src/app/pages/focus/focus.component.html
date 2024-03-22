@@ -45,7 +45,7 @@
             </div>
             <div class='card-text'>
               <p class='font-Cairo fw-500 fs-14'>{{ item.content }}</p>
-              <a class='btn-remove'>
+              <a class='btn-remove' (click)="openConfirmationDialog(item.id)">
                 <fa-icon [icon]="faRemove" class='fa-remove'></fa-icon>
               </a>
             </div>
