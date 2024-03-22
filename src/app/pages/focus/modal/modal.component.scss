@@ -1,0 +1,45 @@
+$modalLW: 500px;
+$modalSW: 300px;
+
+.modal-wrap {
+    width: $modalLW;
+
+    @media (max-width: 500px) {
+        width: $modalSW;
+    }
+
+    .modal-head {
+        padding: 10px 20px;
+        background: linear-gradient(to top, #F5EBE0 0%, #F5EBE0 100%);
+
+        .modal-title {
+            margin: 0px;
+        }
+    }
+
+    .modal-body {
+        padding: 10px 20px;
+
+        input {
+            width: 100%;
+        }
+
+        textarea{
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+
+    .modal-footer {
+        background: linear-gradient(to top, #dbdbdb 0%, #94929240 100%);
+        padding: 20px;
+        display: flex;
+        justify-content: right;
+        gap: 10px;
+
+        button {
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    }
+}

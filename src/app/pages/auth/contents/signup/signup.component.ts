@@ -28,15 +28,14 @@ export class SignupComponent {
   title = 'Create Account';
   subtitle = 'Provide necessary information to proceed with registration or sign up with social media';
 
-  private apiUrl = 'http://localhost:3000/users';
   @ViewChild('msgElement') msgElement!: ElementRef;
 
   constructor(private router: Router, private http: HttpClient) { }
   navigateToCreatePassword(page: string, event: Event, username: string, email: string, phone: string) {
+
     if (username.trim() && email.trim() && phone.trim()) {
       event.preventDefault(); // Prevent the default form submission behavior
-      const url = `${this.apiUrl}/${email.trim()}`;
-      this.http.get<any>(url)
+      this.http.post<any>('http://localhost:3000/users/get', {email: email})
         .subscribe(response => {
           if (response) {
             this.msgElement.nativeElement.style.display = 'block';

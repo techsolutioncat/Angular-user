@@ -1,0 +1,22 @@
+<!-- modal.component.html -->
+
+<div class="modal-wrap">
+    <div class="modal-head">
+        <h2 class="modal-title font-Syne fw-700 td-none">Your Focus</h2>
+    </div>
+    <div class="modal-body">
+        <div class='form-group'>
+            <div class='warning form-message d-hide font-Syne' #msgElement></div>
+        </div>
+        <div class="modal-group">
+            <input class="fs-16" #inputTitle placeholder="Enter title" [value]="title">
+        </div>
+        <div class="modal-group">
+            <textarea class="fs-16" rows="5" #inputContent placeholder="Enter content" [value]="content"></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button cdkFocusInitial class="btn-info font-Cairo fw-700 fs-16 td-none" (click)="onSubmit($event, inputTitle.value, inputContent.value)">Submit</button>
+        <button mat-button (click)=" onClose()" class="btn-light font-Cairo fw-700 fs-16 td-none">Close</button>
+    </div>
+</div>

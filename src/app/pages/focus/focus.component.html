@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class='button'>
-          <a class='add-new font-Syne fw-700 fs-18 td-none'><img [src]="plus" />Add new
+          <a class='add-new font-Syne fw-700 fs-18 td-none' (click)="openModal(0)"><img [src]="plus" />Add new
             focus point</a>
         </div>
       </div>
@@ -39,7 +39,7 @@
               <img [src]="users" />
               <img [src]="fizz" />
             </div>
-            <a class='btn-edit'>
+            <a class='btn-edit' (click)="openModal(1)">
               <fa-icon [icon]="faEdit" class='fa-edit'></fa-icon>
             </a>
           </div>
