@@ -1,6 +1,7 @@
 // modal.component.ts
 
 import { Component, Inject, ElementRef, ViewChild } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -19,14 +20,12 @@ export class ModalComponent {
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router, private route: ActivatedRoute
   ) {
     this.id = data.id;
-
-    if (data.id !== 0) {
-      this.title = 'title';
-      this.content = 'content';
-    }
+    this.title = data.title;
+    this.content = data.content;
   }
 
   onClose(): void {
@@ -60,16 +59,18 @@ export class ModalComponent {
       this.msgElement.nativeElement.innerText = this.msg;
       this.msgElement.nativeElement.style.display = 'block';
     } else {
-      this.http.post<any>('http://localhost:3000/focus/new', { id: this.id, data: {title: title, content: content }})
-      .subscribe(response => {
-        console.log('User data sent successfully:', response);
-        // Handle success or show a success message
-
-        this.onClose();
-      }, error => {
-        console.error('Error sending user data:', error);
-        // Handle error or show an error message
-      });
+      this.http.post<any>('http://localhost:3000/focus/new', { id: this.id, data: { title: title, content: content } })
+        .subscribe(response => {
+          console.log('User data sent successfully:', response);
+          // Navigate to the same route
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/focus']);
+          });
+          this.onClose();
+        }, error => {
+          console.error('Error sending user data:', error);
+          // Handle error or show an error message
+        });
     }
   }
 }

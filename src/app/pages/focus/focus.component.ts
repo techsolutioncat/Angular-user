@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from '../layout/header/header.component';
 import { FooterComponent } from '../layout/footer/footer.component';
 import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 import { ModalComponent } from './modal/modal.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'focus-root',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, FontAwesomeModule],
+  imports: [HttpClientModule, CommonModule, HeaderComponent, FooterComponent, FontAwesomeModule],
   templateUrl: './focus.component.html',
   styleUrl: './focus.component.scss',
 })
@@ -25,11 +27,25 @@ export class FocusComponent {
   faEdit = faEdit;
   faRemove = faRemove;
   page: string = 'Focus Point';
+  limit: any = 1;
+  items: any = [];
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private http: HttpClient) {
+    this.onGetAll(this.limit);
+  }
 
-  openModal(id: any): void {
-    const dialogRef = this.dialog.open(ModalComponent, { data: { id: id } });
+  onGetAll(limit: any): void {
+    this.http.post<any>('http://localhost:3000/focus/all', {limit: limit})
+      .subscribe(response => {
+        this.items = response;
+      }, error => {
+        console.error('Error sending user data:', error);
+        // Handle error or show an error message
+      });
+  }
+
+  openModal(id: any, title: any, content: any): void {
+    const dialogRef = this.dialog.open(ModalComponent, { data: { id: id, title: title, content: content } });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('User input:', result);

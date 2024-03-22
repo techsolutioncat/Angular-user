@@ -23,31 +23,32 @@
           </div>
         </div>
         <div class='button'>
-          <a class='add-new font-Syne fw-700 fs-18 td-none' (click)="openModal(0)"><img [src]="plus" />Add new
+          <a class='add-new font-Syne fw-700 fs-18 td-none' (click)="openModal(0, '', '')"><img [src]="plus" />Add new
             focus point</a>
         </div>
       </div>
       <div class='card-list'>
-        <div class='card' key={row.id}>
-          <div class='card-title'>
-            <p class='m-0 font-Syne fw-700 fs-16'>Voluptatem soluta omnis doloremque iusto odit ab architecto voluptas.
-            </p>
-            <img [src]="help" />
-          </div>
-          <div class='card-icons'>
-            <div class='icons'>
-              <img [src]="users" />
-              <img [src]="fizz" />
+        <div *ngFor="let item of items">
+          <div class='card'>
+            <div class='card-title'>
+              <p class='m-0 font-Syne fw-700 fs-16'>{{ item.title }}</p>
+              <img [src]="help" />
             </div>
-            <a class='btn-edit' (click)="openModal(1)">
-              <fa-icon [icon]="faEdit" class='fa-edit'></fa-icon>
-            </a>
-          </div>
-          <div class='card-text'>
-            <p class='font-Cairo fw-500 fs-14'>Voluptatem soluta omnis doloremque iusto odit ab architecto voluptas.</p>
-            <a class='btn-remove'>
-              <fa-icon [icon]="faRemove" class='fa-remove'></fa-icon>
-            </a>
+            <div class='card-icons'>
+              <div class='icons'>
+                <img [src]="users" />
+                <img [src]="fizz" />
+              </div>
+              <a class='btn-edit' (click)="openModal(item.id, item.title, item.content)">
+                <fa-icon [icon]="faEdit" class='fa-edit'></fa-icon>
+              </a>
+            </div>
+            <div class='card-text'>
+              <p class='font-Cairo fw-500 fs-14'>{{ item.content }}</p>
+              <a class='btn-remove'>
+                <fa-icon [icon]="faRemove" class='fa-remove'></fa-icon>
+              </a>
+            </div>
           </div>
         </div>
       </div>
