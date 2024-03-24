@@ -61,6 +61,7 @@ export class HeaderComponent {
   };
 
   signout(): void {
+    localStorage.setItem('userToken', '');
     this.router.navigate(['/login']); // Navigate to createpassword
   }
 

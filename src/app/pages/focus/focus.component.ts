@@ -8,7 +8,6 @@ import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 import { ModalComponent } from './modal/modal.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { access } from 'fs';
 
 @Component({
   selector: 'focus-root',
