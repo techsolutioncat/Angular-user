@@ -15,6 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class ModalComponent {
   title: string = '';
   content: string = '';
+  limit: string = '';
   id: any = '';
 
   constructor(
@@ -25,6 +26,7 @@ export class ModalComponent {
   ) {
     this.id = data.id;
     this.title = data.title;
+    this.limit = data.limit;
     this.content = data.content;
   }
 
@@ -59,9 +61,9 @@ export class ModalComponent {
       this.msgElement.nativeElement.innerText = this.msg;
       this.msgElement.nativeElement.style.display = 'block';
     } else {
-      this.http.post<any>('http://localhost:3000/focus/new', { id: this.id, data: { title: title, content: content } })
+      this.http.post<any>('http://localhost:3000/focus/new', { id: this.id, data: { title: title, content: content }, limit: this.limit })
         .subscribe(response => {
-          console.log('User data sent successfully:', response);
+          // console.log('User data sent successfully:', response);
           // Navigate to the same route
           this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
             this.router.navigate(['/focus']);

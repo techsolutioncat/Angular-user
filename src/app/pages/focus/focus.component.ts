@@ -47,7 +47,7 @@ export class FocusComponent {
   }
 
   openModal(id: any, title: any, content: any): void {
-    const dialogRef = this.dialog.open(ModalComponent, { data: { id: id, title: title, content: content } });
+    const dialogRef = this.dialog.open(ModalComponent, { data: { id: id, title: title, content: content, limit: this.limit} });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('User input:', result);
