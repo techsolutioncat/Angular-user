@@ -65,10 +65,13 @@ export class ModalComponent {
         .subscribe(response => {
           // console.log('User data sent successfully:', response);
           // Navigate to the same route
-          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-            this.router.navigate(['/focus']);
-          });
-          this.onClose();
+          // const currentUrl = this.router.url; // Get the current URL
+          // this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => { // Navigate to the same URL
+          //   this.router.navigate([currentUrl]); // Navigate back to the current URL
+          // });
+          // this.dialogRef.close(true);
+          location.reload();
+
         }, error => {
           console.error('Error sending user data:', error);
           // Handle error or show an error message

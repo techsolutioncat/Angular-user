@@ -30,10 +30,14 @@ export class FocusComponent {
   page: string = 'Focus Point';
   limit: any = 1;
   items: any = [];
+  count: any = 0;
 
   @ViewChild('inputLimit') inputLimit!: ElementRef;
   constructor(public dialog: MatDialog, private http: HttpClient) {
-    this.onGetAll(this.limit);
+    if(localStorage.getItem('limit') === undefined) {
+      localStorage.setItem('limit', this.limit);
+    }
+    this.onGetAll(localStorage.getItem('limit'));
   }
 
   onGetAll(limit: any): void {
@@ -44,6 +48,15 @@ export class FocusComponent {
         console.error('Error sending user data:', error);
         // Handle error or show an error message
       });
+
+      this.http.post<any>('http://localhost:3000/focus/count', {})
+      .subscribe(response => {
+        this.count = response;
+      }, error => {
+        console.error('Error sending user data:', error);
+        // Handle error or show an error message
+      });
+
   }
 
   openModal(id: any, title: any, content: any): void {
@@ -71,6 +84,7 @@ export class FocusComponent {
 
   loadMore(): void {
     this.limit = this.limit + 1;
+    localStorage.setItem('limit', this.limit);
     this.inputLimit.nativeElement.value = this.limit;
     this.onGetAll(this.limit);
   }

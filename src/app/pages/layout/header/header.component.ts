@@ -63,6 +63,7 @@ export class HeaderComponent {
   signout(): void {
     localStorage.setItem('userToken', '');
     this.router.navigate(['/login']); // Navigate to createpassword
+    localStorage.setItem('limit', '1');
   }
 
   loopOperation(): void {
